@@ -13,9 +13,10 @@ import {
 import { User } from 'lucide-react'
 import { createClient } from '@/lib/supabase/client'
 import { signInWithOtp, signOut } from '@/app/actions'
+import { User as SupabaseUser } from '@supabase/supabase-js' // Import the User type from Supabase
 
 export function AuthButton() {
-  const [user, setUser] = useState<any>(null)
+  const [user, setUser] = useState<SupabaseUser | null>(null) // Use SupabaseUser type
   const [loading, setLoading] = useState(false)
   const { toast } = useToast()
   const supabase = createClient()

@@ -1,6 +1,5 @@
 import Link from 'next/link'
 import { AuthButton } from './AuthButton'
-import { Button } from './ui/button'
 
 export function Navbar() {
   return (
