@@ -13,7 +13,7 @@ export async function signInWithOtp(formData: FormData) {
     email,
     options: {
       shouldCreateUser: false,
-      emailRedirectTo: `https://work-balance-ai.vercel.app/auth/confirm`,
+      emailRedirectTo: `${process.env.NEXT_PUBLIC_BASE_URL}/auth/confirm`,
     },
   })
 
