@@ -7,6 +7,13 @@ import { CalendarRange } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { createClient } from '@/lib/supabase/client'
 
+type ResponseType = {
+  workedHours: number;
+  expectedHours: number;
+  diffHours: number;
+  overtimePay?: number;
+};
+
 export function CardForm() {
   const formatDate = (date: Date) => {
     const year = date.getFullYear()
@@ -26,7 +33,7 @@ export function CardForm() {
     workdayLength: '7.5',
     overtimeHourlyRate: '0',
   })
-  const [response, setResponse] = useState(null)
+  const [response, setResponse] = useState<ResponseType | null>(null);
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const supabase = createClient()
 
